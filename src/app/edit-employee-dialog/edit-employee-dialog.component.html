@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Editar empleado</h1>
+<div mat-dialog-content>
+    <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput [(ngModel)]="data.name">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>País</mat-label>
+        <input matInput [(ngModel)]="data.country">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cerrar</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial [disabled]="checkForm()">Ok</button>
+</div>
