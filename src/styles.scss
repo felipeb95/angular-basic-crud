@@ -1,42 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
-$dark-color: #2d2d2d;
-$gray-color: #41485f;
-
 html, body { height: 100%; }
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
-
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: $dark-color;
-        height: 100%;
-
-        .card {
-            width: 40%;
-            margin-top: 20px;
-
-            .list-item {
-                border-radius: 5px;
-                transition: background 0.3s ease;
-                &:hover {
-                    background: $gray-color;
-                }
-
-                .content {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    width: 100%;
-                }
-            }
-
-            .form-field {
-                width: 100%;
-            }
-        }
-    }
-
 }

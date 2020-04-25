@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { Employee } from '../models/employee';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Employee } from '../../models/employee';
 
 @Component({
     selector: 'app-edit-employee-dialog',
@@ -11,15 +11,21 @@ export class EditEmployeeDialogComponent implements OnInit {
 
     constructor(
         public dialogRef: MatDialogRef<EditEmployeeDialogComponent>,
-        @Inject(MAT_DIALOG_DATA) public data: Employee) {}
+        @Inject(MAT_DIALOG_DATA) public data: any) {}
 
     ngOnInit(): void {
     }
 
+    /**
+     * Close the dialog
+     */
     onNoClick(): void {
         this.dialogRef.close();
     }
 
+    /**
+     * Check if the form is completed
+     */
     checkForm() {
         return !(this.data.name !== '' && this.data.country !== '');
     }

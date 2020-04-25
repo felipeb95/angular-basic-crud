@@ -1,0 +1,39 @@
+
+<div class="container">
+	<mat-card class="card">
+		<mat-list class="list" role="list">
+			<div *ngFor="let employee of employeeArray">
+				<mat-list-item class="list-item" role="listitem">
+					<div class="content">
+						<span>{{employee.name}}</span>
+						<span>{{employee.country}}</span>
+						<div class="options">
+							<button mat-icon-button color="accent" (click)="openEditModal(employee)" required>
+								<mat-icon>edit</mat-icon>
+							</button>
+							<button mat-icon-button color="warn" (click)="deleteEmployee(employee.id)" required>
+								<mat-icon>delete</mat-icon>
+							</button>
+						</div>
+					</div>
+				</mat-list-item>
+			</div>
+		</mat-list>
+	</mat-card>
+	<mat-card class="card">
+		<form class="form" (keydown.enter)="addEmployee()">
+			<mat-form-field class="form-field">
+				<mat-label>Ingresa un nombre</mat-label>
+				<input matInput [(ngModel)]="inputName" name="name">
+            </mat-form-field>
+            <mat-form-field class="form-field">
+                <mat-label>Ingresa un país</mat-label>
+                <mat-select [(ngModel)]="inputCountry" name="country">
+                    <mat-option *ngFor="let country of countriesArray"  [value]="country">
+                        {{country}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+		</form>
+    </mat-card>
+</div>

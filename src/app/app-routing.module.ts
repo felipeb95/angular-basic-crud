@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CrudComponent } from './crud/crud.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', component: CrudComponent },
+  { path: '**', component: CrudComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -4,9 +4,13 @@
         <mat-label>Nombre</mat-label>
         <input matInput [(ngModel)]="data.name">
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field class="form-field">
         <mat-label>País</mat-label>
-        <input matInput [(ngModel)]="data.country">
+        <mat-select [(ngModel)]="data.country" name="country">
+            <mat-option *ngFor="let country of data.countries"  [value]="country">
+                {{country}}
+            </mat-option>
+        </mat-select>
     </mat-form-field>
 </div>
 <div mat-dialog-actions>
